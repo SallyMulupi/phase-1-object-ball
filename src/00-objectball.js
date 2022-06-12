@@ -1,4 +1,4 @@
-const gamers = gamersObject()
+const NBA = gamersObject()
 const teams = Object.values(game)
 const object = gameObject()
 
@@ -6,7 +6,7 @@ const object = gameObject()
 
 
 function gameObject() {
-    const obj = {
+    const object = {
         home: {
             teamName: "Brooklyn Nets",
             colors: ["Black", "White"],
@@ -120,7 +120,7 @@ function gameObject() {
             },
         },
     };
-    return obj;
+    return object;
 }
 console.log(gameObject())
 
@@ -138,12 +138,19 @@ function awayTeam() {
     return game.away
 }
 
-function gamersObject() {
+function shoeSize() {
+    let stats = Object.values(gamers)
+    return stats.map(stat => stat.shoe)
+}
+
+
+function NBAsObject() {
     // return Object.assign({}, homeTeam().players, awayTeam().players)
-    return {...homeTeam().gamers, ...awayTeam().gamers }
+    return {...NBAhomeTeam().NBA, awayTeam().gamers }
 }
 
 function teamColors(teamName) {
+
     return findByTeamName(teamName).colors
 }
 
@@ -151,17 +158,19 @@ function findByTeamName(teamName) {
     return teams.find(team => team.teamName === teamName)
 }
 
-function teamNames() {
-    return teams.map(team => team.teamName)
+function playersNumber() {
+    return findByTeamName(teamName).colors //jersey
 }
-
-function shoeSize() {
-    let stats = Object.values(gamers)
-    return stats.map(stat => stat.shoe)
+playerStats("Alan Anderson") {
+    return findByName(playerName).players
 }
 
 function bigShoeRebounds() {
     const playerArr = Object.entries(gamers)
     debugger
     return playerArr.filter(gamers => gamers[1].shoe > 15).map(pArr => pArr[0])
+}
+
+function teamNames() {
+    return teams.map(team => team.teamName)
 }
